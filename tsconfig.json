@@ -19,7 +19,7 @@
   	"src/**/*.ts","src/**/*.js",
   	"node_modules/'@types'/**/*.d.ts"
   ],
-    "awesomeTypescriptLoaderOptions": {
+  "awesomeTypescriptLoaderOptions": {
     "useWebpackText": true,
     "forkChecker": true,
     "useCache": true

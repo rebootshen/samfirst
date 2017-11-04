@@ -3,7 +3,7 @@ let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
   entry: {
-    app: path.resolve(__dirname,'src','index.js')
+    app: path.resolve(__dirname,'src','app.ts')
   },
   output: {
     filename: 'bundle.js',
@@ -12,10 +12,7 @@ module.exports = {
   resolve: {
     extensions: ['.js','.jsx','.ts','.tsx']
   },
-    // Add minification
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin()
-  ],
+
   devtool: 'source-map',
   module: {
     loaders: [
@@ -26,8 +23,9 @@ module.exports = {
         { test: /\.js[x]?$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
   },
-
+    // Add minification
   plugins: [
+    new webpack.optimize.UglifyJsPlugin(),
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname,'src', 'index.html')
     })
