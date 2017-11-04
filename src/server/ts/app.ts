@@ -3,5 +3,5 @@ import $ = require('jquery');
 
 $(() => {
 	$(document.body).html(greeter('World'));
-	ll
+	//ll
 });

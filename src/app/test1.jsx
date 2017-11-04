@@ -1,13 +1,14 @@
 'use strict';
 
 
-import React, { Component } from 'react';
+import * as React from 'react';
 
-export class test1 extends Component {
-	render() {
-		return (
-			<div></div>
-			<div className="container"></div>
-		);
-	}
+export class test1 extends React.Component {
+  render() {
+    return (
+      <div>
+      <div className="container"></div>
+      </div>
+    );
+  }
 }
