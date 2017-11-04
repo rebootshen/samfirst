@@ -1,9 +1,11 @@
 let path = require('path');
 let webpack = require('webpack');
 let HtmlWebpackPlugin = require('html-webpack-plugin');
+let UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+
 module.exports = {
   entry: {
-    app: path.resolve(__dirname,'src','app.ts')
+    app: path.resolve(__dirname,'src','ts/app.ts')
   },
   output: {
     filename: 'bundle.js',
@@ -14,6 +16,20 @@ module.exports = {
   },
 
   devtool: 'source-map',
+      // Add minification
+  plugins: [
+    new UglifyJsPlugin({
+      uglifyOptions: {
+        warnings: false,
+        comments: false,
+        minimize: false
+      }
+
+    }),
+    new HtmlWebpackPlugin({
+      template: path.resolve(__dirname,'src', 'index.html')
+    })
+  ],
   module: {
     loaders: [
       { test: /\.css$/, loader: 'style-loader!css-loader' },
@@ -22,12 +38,5 @@ module.exports = {
       { test: /\.tsx?$/, loader: 'awesome-typescript-loader' },
         { test: /\.js[x]?$/, loader: 'babel-loader', exclude: /node_modules/ }
     ]
-  },
-    // Add minification
-  plugins: [
-    new webpack.optimize.UglifyJsPlugin(),
-    new HtmlWebpackPlugin({
-      template: path.resolve(__dirname,'src', 'index.html')
-    })
-  ]
+  }
 };
