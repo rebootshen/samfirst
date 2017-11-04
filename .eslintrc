@@ -17,10 +17,7 @@
         "react"
     ],
     "rules": {
-        "indent": [
-            1,
-            "space"
-        ],
+        "no-unused-vars": 0,
         "linebreak-style": 0,
         "no-console": 0,
         "quotes": [
@@ -30,6 +27,11 @@
         "semi": [
             "error",
             "always"
+        ],
+        "max-len": [1, 50, 2, {ignoreComments: true}],
+        "indent": [
+            1,
+            2
         ],
     }
 }
