@@ -1,5 +1,5 @@
 import './index.scss';
-//import {title} from './components/title';
+import App from '../app/app.js';
 
 var hello=document.createElement("div");
 hello.innerHTML='<h1> Hello World!</h1>';
@@ -7,8 +7,8 @@ hello.innerHTML='<h1> Hello World!</h1>';
 
 var title = require('./components/title.js');
 console.log(title());
-ll
-var app = document.getElementById("app");
+
+var app = document.getElementById("hello");
 app.appendChild(title());
 app.appendChild(hello);
 
