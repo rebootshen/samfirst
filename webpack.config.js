@@ -32,6 +32,7 @@ module.exports = {
       template: APP_DIR + '/index.html'
     })
   ],
+
   module: {
     /*
      * Each loader needs an associated Regex test that goes through each
@@ -43,7 +44,11 @@ module.exports = {
       {
         test: /\.js$/,
         enforce: 'pre',
-        loader: 'eslint-loader'
+        loader: 'eslint-loader',
+        options: {
+          quiet: false
+          //fix: true
+        }
       },
       {
         test: /\.js$/,
