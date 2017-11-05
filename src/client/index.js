@@ -1,5 +1,5 @@
 import './index.scss';
-import * as App from '../app/app.js';
+import * as App from '../app/index';
 import Jobs from './data/jobs';
 var hello = document.createElement('div');
 hello.innerHTML = '<h1> Hello World!</h1>';

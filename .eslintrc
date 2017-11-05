@@ -28,7 +28,7 @@
             "error",
             "always"
         ],
-        "max-len": [1, 50, 2, {ignoreComments: true}],
+        "max-len": [1, 120, 2, {ignoreComments: true}],
         "indent": [
             1,
             2

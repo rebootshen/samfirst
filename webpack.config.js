@@ -46,6 +46,11 @@ module.exports = {
         loader: 'eslint-loader'
       },
       {
+        test: /\.js$/,
+        enforce: 'pre',
+        loader: 'source-map-loader'
+      },
+      {
         test: /\.css$/,
         loader: 'style-loader!css-loader'
       },
@@ -65,15 +70,19 @@ module.exports = {
         test: /\.js[x]?$/,
         loader: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.jpe?g$|\.ico$|\.gif$|\.png$|\.svg$|\.woff$|\.ttf$|\.wav$|\.mp3$/,
+        loader: 'file-loader?name=[name].[ext]' // <-- retain original file name
       }
     ]
   },
-  // When importing a module whose path matches one of the following, just
-  // assume a corresponding global variable exists and use that instead.
-  // This is important because it allows us to avoid bundling all of our
-  // dependencies, which allows browsers to cache those libraries between builds.
-  //externals: {
-  //  'react': 'React',
-  //  'react-dom': 'ReactDOM'
-  //},
+// When importing a module whose path matches one of the following, just
+// assume a corresponding global variable exists and use that instead.
+// This is important because it allows us to avoid bundling all of our
+// dependencies, which allows browsers to cache those libraries between builds.
+//externals: {
+//  'react': 'React',
+//  'react-dom': 'ReactDOM'
+//},
 };
